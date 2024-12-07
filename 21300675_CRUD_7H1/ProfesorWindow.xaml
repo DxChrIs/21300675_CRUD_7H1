@@ -1,0 +1,38 @@
+﻿<Window x:Class="_21300675_CRUD_7H1.ProfesorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión de Asignaturaes" Height="450" Width="800">
+    <Grid>
+        <!-- Definición de columnas en el Grid -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Columna para los formularios y botones -->
+            <ColumnDefinition Width="*"/>
+            <!-- Columna para el DataGrid (ocupa el resto del espacio) -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Formulario para agregar/modificar Asignaturaes y botones a la izquierda -->
+        <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Orientation="Vertical">
+            <!-- Campo de Nombre -->
+            <TextBox Name="txtNombreAsignatura" Width="250" Margin="5">
+                <TextBox.ToolTip>
+                    Nombre
+                </TextBox.ToolTip>
+            </TextBox>
+
+            <!-- Botones de acciones -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <Button Name="btnAgregarAsignatura" Width="75" Margin="5" Content="Agregar" Click="btnAgregarAsignatura_Click"/>
+                <Button Name="btnModificarAsignatura" Width="75" Margin="5" Content="Modificar" Click="btnModificarAsignatura_Click"/>
+                <Button Name="btnEliminarAsignatura" Width="75" Margin="5" Content="Eliminar" Click="btnEliminarAsignatura_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- DataGrid para mostrar los Asignaturaes a la derecha -->
+        <DataGrid Name="dataGridAsignaturas" Grid.Column="1" AutoGenerateColumns="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Height="250" />
+
+        <!-- Botón para regresar a la ventana de Estudiantes -->
+        <Button Name="btnVolver" Content="Volver a Estudiantes" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="30" Margin="10" Click="btnVolver_ClickEstudiante"/> 
+        <Button Name="btnVolver2" Content="Volver a Calificaciones" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="30" Margin="60" Click="btnVolver_ClickCalificaciones"/>
+    </Grid>
+</Window>
